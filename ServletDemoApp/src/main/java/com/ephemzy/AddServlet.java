@@ -3,6 +3,8 @@ package com.ephemzy;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -18,6 +20,24 @@ public class AddServlet extends HttpServlet{
 		
 		PrintWriter out = resp.getWriter();
 		out.println("Result" + k);
+	}
+	
+//	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+//		int i = Integer.parseInt(req.getParameter("num1"));
+//		int j = Integer.parseInt(req.getParameter("num2"));
+//		int k = i + j;
+//		
+//		PrintWriter out = resp.getWriter();
+//		out.println("Result" + k);
+//	}
+	
+	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+		int i = Integer.parseInt(req.getParameter("num1"));
+		int j = Integer.parseInt(req.getParameter("num2"));
+		int k = i + j;
+		req.setAttribute("k", k);
+		RequestDispatcher rd = req.getRequestDispatcher("sq");
+		rd.forward(req, resp);
 	}
 	
 

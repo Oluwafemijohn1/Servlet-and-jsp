@@ -9,4 +9,15 @@
   	<servlet-name>abc</servlet-name>
   	<url-pattern>/add</url-pattern>
   </servlet-mapping>
+  
+  
+  
+    <servlet>
+  	<servlet-name>sqr</servlet-name>
+  	<servlet-class>com.ephemzy.SqServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>sqr</servlet-name>
+  	<url-pattern>/sq</url-pattern>
+  </servlet-mapping>
 </web-app>
