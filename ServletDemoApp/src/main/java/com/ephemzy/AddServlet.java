@@ -13,7 +13,7 @@ public class AddServlet extends HttpServlet{
 	
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		int i = Integer.parseInt(req.getParameter("num1"));
-		int j = Integer.parseInt(req.getParameter("num1"));
+		int j = Integer.parseInt(req.getParameter("num2"));
 		int k = i + j;
 		
 		PrintWriter out = resp.getWriter();
