@@ -12,10 +12,12 @@ public class SqServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-		int k = (int) req.getAttribute("k");
+		int k = Integer.parseInt(req.getParameter("k"));
 		k = k * k;
 		PrintWriter out = resp.getWriter();
 		out.println("Result is : " + k);
+		
+//		System.out.println("Hello sq called ");
 	}
 
 }
