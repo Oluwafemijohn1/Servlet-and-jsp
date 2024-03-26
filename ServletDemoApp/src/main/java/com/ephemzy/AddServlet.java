@@ -8,6 +8,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 public class AddServlet extends HttpServlet{
 
@@ -47,7 +48,9 @@ public class AddServlet extends HttpServlet{
 		int j = Integer.parseInt(req.getParameter("num2"));
 		int k = i + j;
 		
-		resp.sendRedirect("sq?k=" + k);
+		HttpSession session = req.getSession();
+		session.setAttribute("k", k);
+		resp.sendRedirect("sq");
 	}
 
 }
