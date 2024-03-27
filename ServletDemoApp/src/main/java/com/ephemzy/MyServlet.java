@@ -3,7 +3,7 @@ package com.ephemzy;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import jakarta.servlet.ServletContext;
+import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -17,8 +17,8 @@ public class MyServlet extends HttpServlet {
 		PrintWriter out = resp.getWriter();
 		out.println("Hi <br/>");
 		
-		ServletContext ctx = getServletContext(); // Or req.getServletContext();
-		String str = ctx.getInitParameter("phone");
+		ServletConfig cg = getServletConfig(); // Or req.getServletContext();
+		String str = cg.getInitParameter("name");
 		
 		out.println(str);
 		

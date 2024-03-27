@@ -24,6 +24,12 @@
    <servlet>
   	<servlet-name>home</servlet-name>
   	<servlet-class>com.ephemzy.MyServlet</servlet-class>
+  	<init-param>
+  		<param-name>name</param-name>
+  		<param-value>John</param-value>
+  	
+  	</init-param>
+  	
   </servlet>
   <servlet-mapping>
   	<servlet-name>home</servlet-name>
